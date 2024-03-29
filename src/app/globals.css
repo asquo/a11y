@@ -1,0 +1,19 @@
+html {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;  
+  width: calc(100% - 16px);
+  margin: 0 0px;
+  padding: 0px 8px;
+}

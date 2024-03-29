@@ -1,0 +1,71 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    border: 1px solid black
+}
+
+.main {
+    height: 100%;
+    margin-top: 20px;
+    border: 1px solid black
+}
+
+@keyframes elementTarget {
+    from {
+        background-color: orange;
+    }
+    to {
+        background-color: unset;
+    }
+}
+
+.main:target {
+    animation: elementTarget 1s;
+}
+
+.footer {
+    display: flex;
+    border: 1px solid black;
+    margin: 10px 0px;
+    height: 200px;
+}
+
+.footer:target {
+    animation: elementTarget 1s;
+}
+
+.skipContentContainer {
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+.skipContentContainer:focus {
+    display: flex;    
+    transform: translateY(100%);
+}
+
+.skipContentItem {
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+.skipContentItem:focus {
+    transform: translateY(0%);
+    border: 4px solid orange;
+    border-radius: 10px;
+    margin: 0 4px;
+    padding: 10px;
+    z-index: 1000;
+    background-color: lightblue;
+}
+
+.example {
+    margin: 10px 0px 30px 0px;
+}
