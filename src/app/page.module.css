@@ -15,6 +15,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow-y: auto;
     margin-top: 20px;
     border: 1px solid black
 }
@@ -40,9 +41,10 @@
 
 .footer {
     display: flex;
+    flex-shrink: 0;
     border: 1px solid black;
     margin: 10px 0px;
-    height: 200px;
+    height: 100px;
 }
 
 .footer:target {
@@ -82,9 +84,26 @@
 }
 
 .menuContainer {
-    display: flex;        
-    width: 100%;
+    display: flex;            
     padding: 0px;
     margin: 0px;
     background-color: lightgray;
+}
+
+.pull-right {
+    float: right;
+  }
+
+.btn-search {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.btn-search:focus {
+    border: 5px solid orange;
 }

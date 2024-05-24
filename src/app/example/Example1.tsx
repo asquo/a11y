@@ -109,6 +109,19 @@ export const Demo1 = () => {
           .
         </figcaption>
       </figure>
+      <p>
+        In the United States, government mandates including Section 508, WCAG,
+        <sup id="cite_ref-14" className="reference">
+          <a href="#cite_note-14">[14]</a>
+        </sup>{" "}
+        DDA are all enforcing practices to standardize accessibility testing
+        engineering in product development.
+      </p>
+      <p>
+        Accessibility modifications may be required to enable persons with
+        disabilities to gain access to education, employment, transportation,
+        housing, recreation, or even simply to exercise their right to vote.
+      </p>
 
       <img
         alt=""

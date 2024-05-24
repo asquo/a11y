@@ -31,3 +31,7 @@ export const Example2 = () => {
     </>
   );
 };
+
+export const Demo2 = () => {
+  return <></>;
+};
