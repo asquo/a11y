@@ -80,7 +80,7 @@
     padding: 20px;
     border-radius: unset;
     border: unset;
-    outline: unset;
+    /* outline: unset; */
 }
 
 .menuContainer {

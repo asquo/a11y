@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import styles from "./example1.module.css";
 
 export const Example1 = () => {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -33,8 +34,15 @@ export const Example1 = () => {
 };
 
 export const Demo1 = () => {
+  useLayoutEffect(() => {
+    document.querySelector<HTMLElement>("#demo1Title").focus();
+  }, []);
+
   return (
     <div>
+      <h2 id="demo1Title" className={styles.demo1Title} tabIndex={-1}>
+        WCAG
+      </h2>
       <img
         alt="Web Content Accessibility Guidelines"
         src="https://i0.wp.com/wcag.com/wp-content/uploads/2022/01/cropped-android-chrome-256x256-1.png?fit=512%2C512&ssl=1"
