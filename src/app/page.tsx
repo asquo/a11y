@@ -1,11 +1,50 @@
+"use client";
+
 import styles from "./page.module.css";
-import { Example1 } from "./example/Example1";
+import { useMemo, useState } from "react";
+import { Demo1, Example1 } from "./example/Example1";
 import { Example2 } from "./example/Example2";
 import { Example3 } from "./example/Example3";
 import { Example4 } from "./example/Example4";
 import { Example5 } from "./example/Example5";
+import { Example6 } from "./example/Example6";
+import { WcagPrinciples } from "./example/WcagPrinciples";
 
 export default function Home() {
+  const [exampleContent, setExampleContent] =
+    useState<React.ReactElement>(null);
+
+  const exampleList = useMemo(
+    () => [
+      {
+        id: "Demo1",
+        // component: <Example1 />,
+        component: <Demo1 />,
+      },
+      {
+        id: "Demo2",
+        component: <Example2 />,
+      },
+      {
+        id: "Demo3",
+        component: <Example3 />,
+      },
+      {
+        id: "Demo4",
+        component: <Example4 />,
+      },
+      {
+        id: "Demo5",
+        component: <Example5 />,
+      },
+      {
+        id: "Demo6",
+        component: <Example6 />,
+      },
+    ],
+    []
+  );
+
   return (
     <div className={styles.pageContainer}>
       <div className={styles.header}>
@@ -27,12 +66,26 @@ export default function Home() {
         </div>
       </div>
       <main id="main" className={styles.main}>
-        <div>This is the main content</div>
-        <div className={styles.example}>{<Example1 />}</div>
-        <div className={styles.example}>{<Example2 />}</div>
-        <div className={styles.example}>{<Example3 />}</div>
-        <div className={styles.example}>{<Example4 />}</div>
-        <div className={styles.example}>{<Example5 />}</div>
+        <ul className={styles.menuContainer}>
+          {exampleList.map((ex) => {
+            return (
+              <button
+                key={ex.id}
+                className={styles.example}
+                onClick={() => {
+                  setExampleContent(ex.component);
+                }}
+              >
+                {ex.id}
+              </button>
+            );
+          })}
+        </ul>
+        <div className={styles.mainContent}>
+          <div>
+            <div className={styles.example}>{exampleContent}</div>
+          </div>
+        </div>
       </main>
       <footer id="footer" className={styles.footer}>
         <small>Copyright by Abletech S.r.l.</small>

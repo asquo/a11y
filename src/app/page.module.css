@@ -12,6 +12,8 @@
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     margin-top: 20px;
     border: 1px solid black
@@ -28,6 +30,12 @@
 
 .main:target {
     animation: elementTarget 1s;
+}
+
+.mainContent {
+    display: flex;    
+    height: 100%; 
+    overflow-y: auto;   
 }
 
 .footer {
@@ -67,5 +75,16 @@
 }
 
 .example {
-    margin: 10px 0px 30px 0px;
+    padding: 20px;
+    border-radius: unset;
+    border: unset;
+    outline: unset;
+}
+
+.menuContainer {
+    display: flex;        
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: lightgray;
 }
