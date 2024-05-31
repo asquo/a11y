@@ -84,8 +84,7 @@
 .menuButton {
     padding: 20px;
     border-radius: unset;
-    border: unset;
-    outline: unset; /*FIX_THIS*/
+    border: unset;    
     background-color: lightgray;
 }
 
@@ -107,5 +106,5 @@
 }
 
 .btn-search:focus {
-    outline: unset; /*FIX_THIS*/
+    outline: 5px solid orange;
 }

@@ -63,7 +63,19 @@ export default function Home() {
       </div>
       <main id="main" className={styles.main}>
         <nav>
-          {/* FIX_THIS */}
+          {exampleList.map((ex) => {
+            return (
+              <button
+                key={ex.id}
+                className={styles.menuButton}
+                onClick={() => {
+                  setExampleContent(ex.component);
+                }}
+              >
+                {ex.id}
+              </button>
+            );
+          })}
           <a
             href="#"
             className={[styles["btn-search"], styles["pull-right"]].join(" ")}
@@ -80,19 +92,6 @@ export default function Home() {
             </svg>
             Search
           </a>
-          {exampleList.map((ex) => {
-            return (
-              <button
-                key={ex.id}
-                className={styles.menuButton}
-                onClick={() => {
-                  setExampleContent(ex.component);
-                }}
-              >
-                {ex.id}
-              </button>
-            );
-          })}
         </nav>
         <div className={styles.mainContent}>{exampleContent}</div>
       </main>
