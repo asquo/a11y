@@ -63,6 +63,7 @@ export default function Home() {
       </div>
       <main id="main" className={styles.main}>
         <nav>
+          {/* FIX_THIS */}
           <a
             href="#"
             className={[styles["btn-search"], styles["pull-right"]].join(" ")}
