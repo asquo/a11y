@@ -8,16 +8,20 @@
 
 .header {
     display: flex;
-    border: 1px solid black
+    background-color: papayawhip;
+    padding: 10px;
+    height: 50px;
 }
 
 .main {
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow-y: auto;
-    margin-top: 20px;
-    border: 1px solid black
+    overflow-y: auto;    
+}
+
+.main nav {
+    background-color: lightgray;
 }
 
 @keyframes elementTarget {
@@ -35,16 +39,17 @@
 
 .mainContent {
     display: flex;    
+    flex-direction: column;
     height: 100%; 
     overflow-y: auto;   
 }
 
 .footer {
     display: flex;
-    flex-shrink: 0;
-    border: 1px solid black;
-    margin: 10px 0px;
-    height: 100px;
+    flex-shrink: 0;    
+    height: 60px;
+    background-color: aliceblue;
+    padding: 10px;
 }
 
 .footer:target {
@@ -53,17 +58,17 @@
 
 .skipContentContainer {
     position: absolute;
-    transform: translateY(-100%);
+    transform: translateY(-1000%);
 }
 
 .skipContentContainer:focus {
     display: flex;    
-    transform: translateY(100%);
+    transform: translateY(1000%);
 }
 
 .skipContentItem {
     position: absolute;
-    transform: translateY(-100%);
+    transform: translateY(-1000%);
 }
 
 .skipContentItem:focus {
@@ -76,17 +81,11 @@
     background-color: lightblue;
 }
 
-.example {
+.menuButton {
     padding: 20px;
     border-radius: unset;
     border: unset;
-    /* outline: unset; */
-}
-
-.menuContainer {
-    display: flex;            
-    padding: 0px;
-    margin: 0px;
+    outline: unset; /*FIX_THIS*/
     background-color: lightgray;
 }
 
@@ -96,14 +95,17 @@
 
 .btn-search {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-right: 8px;
     width: 100px;
-    height: 50px;
+    height: 40px;
+    margin-top: 5px;
     border: 1px solid black;
     border-radius: 5px;
+    background-color: white;
 }
 
 .btn-search:focus {
-    border: 5px solid orange;
+    outline: unset; /*FIX_THIS*/
 }

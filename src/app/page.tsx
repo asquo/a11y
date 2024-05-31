@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.header}>
-        <div className={styles.skipContentContainer} tabIndex={0}>
+        <div className={styles.skipContentContainer}>
           <a href="#main" className={styles.skipContentItem}>
             Skip to main content
           </a>
@@ -58,12 +58,7 @@ export default function Home() {
           </a>
         </div>
         <div>
-          <div>This is the header of ARX11Y app.</div>
-          <div>
-            <small>
-              Try to use TAB from your keyboard to show the skip content element
-            </small>
-          </div>
+          <div>ARX11Y - A(RX)cessibility</div>
         </div>
       </div>
       <main id="main" className={styles.main}>
@@ -88,7 +83,7 @@ export default function Home() {
             return (
               <button
                 key={ex.id}
-                className={styles.example}
+                className={styles.menuButton}
                 onClick={() => {
                   setExampleContent(ex.component);
                 }}
@@ -98,11 +93,7 @@ export default function Home() {
             );
           })}
         </nav>
-        <div className={styles.mainContent}>
-          <div>
-            <div className={styles.example}>{exampleContent}</div>
-          </div>
-        </div>
+        <div className={styles.mainContent}>{exampleContent}</div>
       </main>
       <footer id="footer" className={styles.footer}>
         <small>Copyright by Abletech S.r.l.</small>
