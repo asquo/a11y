@@ -38,7 +38,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<div id="container">
-					<header className="bg-gray-400 p-6 border-b border-gray-300">
+					<header className="bg-gray-300 p-6 border-b border-gray-300">
 						<h1 className="text-3xl font-bold mb-4">Gilda Accessibilità</h1>
 						<nav className="p-4 clearfix h-14">
 							<div className="float-right w-1/8 p-1">
