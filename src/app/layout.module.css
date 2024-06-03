@@ -1,0 +1,109 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    border: 1px solid black
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    margin-top: 20px;
+    border: 1px solid black
+}
+
+@keyframes elementTarget {
+    from {
+        background-color: orange;
+    }
+    to {
+        background-color: unset;
+    }
+}
+
+.main:target {
+    animation: elementTarget 1s;
+}
+
+.mainContent {
+    display: flex;    
+    height: 100%; 
+    overflow-y: auto;   
+}
+
+.footer {
+    display: flex;
+    flex-shrink: 0;
+    border: 1px solid black;
+    margin: 10px 0px;
+    height: 100px;
+}
+
+.footer:target {
+    animation: elementTarget 1s;
+}
+
+.skipContentContainer {
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+.skipContentContainer:focus {
+    display: flex;    
+    transform: translateY(100%);
+}
+
+.skipContentItem {
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+.skipContentItem:focus {
+    transform: translateY(0%);
+    border: 4px solid orange;
+    border-radius: 10px;
+    margin: 0 4px;
+    padding: 10px;
+    z-index: 1000;
+    background-color: lightblue;
+}
+
+.example {
+    padding: 20px;
+    border-radius: unset;
+    border: unset;
+    /* outline: unset; */
+}
+
+.menuContainer {
+    display: flex;            
+    padding: 0px;
+    margin: 0px;
+    background-color: lightgray;
+}
+
+.pull-right {
+    float: right;
+  }
+
+.btn-search {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.btn-search:focus {
+    border: 5px solid orange;
+}
