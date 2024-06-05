@@ -10,22 +10,22 @@ const inter = Inter({ subsets: ['latin'] });
 
 const exampleList = [
 	{
-		id: 'Demo1',
+		id: 'Demo1',desc:'Perceivable'
 	},
 	{
-		id: 'Demo2',
+		id: 'Demo2',desc:'Operable'
 	},
 	{
-		id: 'Demo3',
+		id: 'Demo3',desc:'Understandable'
 	},
 	{
-		id: 'Demo4',
+		id: 'Demo4',desc:'Robust'
 	},
 	{
-		id: 'Demo5',
+		id: 'Demo5',desc:'ARIA 1'
 	},
 	{
-		id: 'Demo6',
+		id: 'Demo6',desc:'ARIA 2'
 	},
 ];
 
@@ -37,7 +37,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<div id="container">
+				<div id="container" className='flex flex-col w-full'>
 					<header className="bg-gray-300 p-6 border-b border-gray-300">
 						<h1 className="text-3xl font-bold mb-4">Gilda Accessibilità</h1>
 						<nav className="p-4 clearfix h-14">
@@ -63,7 +63,7 @@ export default function RootLayout({
 									Search
 								</a>
 							</div>
-							<div className="float-left container flex justify-between items-center  w-1/2 p-4">
+							<div className="float-left container flex justify-between items-center  w-4/5 p-4">
 								<ul className="flex space-x-4">
 									{exampleList.map((ex) => {
 										return (
@@ -72,7 +72,7 @@ export default function RootLayout({
 													href={`/example/${ex.id}`}
 													className="text-white hover:bg-gray-700 hover:text-gray-200 px-3 py-2 rounded"
 												>
-													{ex.id}
+													{ex.desc}
 												</Link>
 											</li>
 										);
@@ -84,7 +84,7 @@ export default function RootLayout({
 
 					{children}
 
-					<footer id="footer" className={styles.footer}>
+					<footer id="footer" className="flex h-8 w-full border-solid border-2 border-gray-500 items-center justify-center">
 						<small>Copyright by Abletech S.r.l.</small>
 						<small>Builded by ARXccessibility</small>
 					</footer>
