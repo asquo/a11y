@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .cell {
+  padding: 20px;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.container .cell > * {
+  margin-bottom: 20px;
+}
+
+.price > * {
+  margin-right: 4px;
+}
+
+.container .cell .actionShowExample {
+  border: 1px solid #d2d2d2;
+  background-color: #ebebed;
+  height: 36px;
+  padding: 0px 10px;
+  min-width: 100px;
+  border-radius: 4px;
+}
+
+.exampleInfo {
+  border: 1px solid #a8dfff;
+  background-color: #daf1ff;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.ctaCart {
+  border: 1px solid #00aeff;
+  background-color: #0073aa;
+  padding: 10px;
+  min-width: 50px;
+  border-radius: 4px;
+  font-size: 20px;
+}
