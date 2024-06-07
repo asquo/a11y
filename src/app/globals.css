@@ -110,3 +110,18 @@ body {
 	flex-direction: column;
 	width: 201px;
 }
+
+.skip-link {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	background: #BF1722;
+	color: white;
+	padding: 8px;
+	z-index: 100;
+	border-bottom-right-radius: 8px;
+  }
+  
+  .skip-link:focus {
+	top: 0;
+  }

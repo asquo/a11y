@@ -4,9 +4,9 @@ import Image from "next/image";
 
 
 export const Demo2 = () => {
-  useLayoutEffect(() => {
-		document?.querySelector<HTMLElement>('#demo1Title')?.focus();
-	}, []);
+	//   useLayoutEffect(() => {
+	// 		document?.querySelector<HTMLElement>('#demo1Title')?.focus();
+	// 	}, []);
 
 	return (
 		<>

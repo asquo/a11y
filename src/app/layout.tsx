@@ -37,6 +37,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
+		 		{/* <a className="skip-link" href="#content">Skip to main content</a> */}
 				<div id="container" className='flex flex-col w-full'>
 					<header className="bg-gray-300 p-6 border-b border-gray-300">
 						<h1 className="text-3xl font-bold mb-4">Gilda Accessibilità</h1>
