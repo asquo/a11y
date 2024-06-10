@@ -1,5 +1,5 @@
 "use client";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, use, useCallback } from "react";
 import Image from "next/image";
 
 
@@ -8,28 +8,35 @@ export const Demo2 = () => {
 	// 		document?.querySelector<HTMLElement>('#demo1Title')?.focus();
 	// 	}, []);
 
+	const onNavigation = useCallback((url) => {
+		var urlId = url.split('-')[1];
+
+		const titleElement = document.getElementById(`title-${urlId}`);
+		titleElement?.focus();
+	}, []);
+
 	return (
 		<>
 		 <div id="sidebar"> {/*aside*/}
             <h2>Indice</h2>
             <ul>
-                <li><a href="#section1">Sezione 1</a>
+                <li><a href="#section-1" onClick={() => onNavigation("section-1")}>Sezione 1</a>
                     <ul>
-                        <li><a href="#subsection1.1">Sottosezione 1.1</a></li>
+                        <li><a href="#subsection-1.1" onClick={() => onNavigation("subsection-1.1")}>Sottosezione 1.1</a></li>
                     </ul>
                 </li>
-                <li><a href="#section2">Sezione 2</a>
+                <li><a href="#section-2" onClick={() => onNavigation("section-2")}>Sezione 2</a>
                     <ul>
-                        <li><a href="#subsection2.1">Sottosezione 2.1</a></li>
-                        <li><a href="#subsection2.2">Sottosezione 2.2</a></li>
+                        <li><a href="#subsection-2.1" onClick={() => onNavigation("subsection-2.1")}>Sottosezione 2.1</a></li>
+                        <li><a href="#subsection-2.2" onClick={() => onNavigation("subsection-2.2")}>Sottosezione 2.2</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
 		<div id="content"> {/*main*/}
-			<div id="section1"> {/*section*/}
+			<div id="section-1"> {/*section*/}
 				<h2
-					id="title1"
+					id="title-1"
 					className="text-2xl font-semibold mb-3 mt-3"
 					tabIndex={-1}
 				>
@@ -45,7 +52,7 @@ export const Demo2 = () => {
 					/>
 				</p>
 				<div> {/*article*/}
-					<h3 id="title1.1" className="text-1xl font-semibold mb-3 mt-3">What are WCAG?</h3>
+					<h3 id="title-1.1" tabIndex={-1} className="text-1xl font-semibold mb-3 mt-3">What are WCAG?</h3>
 					<p>
 						The Web Content Accessibility Guidelines (WCAG) are part of a series of
 						web accessibility guidelines published by the Web Accessibility
@@ -67,8 +74,8 @@ export const Demo2 = () => {
 				/>
 			</div>
 
-			<div id="section2"> {/*section*/}
-				<h2 id="title2" className="text-2xl font-semibold mb-3 mt-3">
+			<div id="section-2"> {/*section*/}
+				<h2 id="title-2" tabIndex={-1} className="text-2xl font-semibold mb-3 mt-3">
 					Legislation
 				</h2>
 				<p>
@@ -79,8 +86,8 @@ export const Demo2 = () => {
 					Nations Convention on the Rights of Persons with Disabilities commits
 					signatories to provide for full accessibility in their countries.[12]
 				</p>
-				<div id="subsection2.1"> {/*article*/}
-					<h3 id="title2.1" className="text-1xl font-semibold mb-3 mt-3">Official Logo</h3>
+				<div id="subsection-2.1"> {/*article*/}
+					<h3 id="title-2.1" tabIndex={-1} className="text-1xl font-semibold mb-3 mt-3">Official Logo</h3>
 					<figure
 						className="mw-default-size figure float-right"
 						typeof="mw:File/Thumb"
@@ -135,8 +142,8 @@ export const Demo2 = () => {
 						src="https://courses.edx.org/assets/courseware/v1/69967b1855807933c080f1d765394c64/asset-v1:W3Cx+WAI0.1x+3T2019+type@asset+block/gray-line.png"
 					/>
 				</div>
-				<div id="subsection2.2"> {/*article*/}
-					<h3 id="title2.2" className="text-1xl font-semibold mb-3 mt-3">
+				<div id="subsection-2.2"> {/*article*/}
+					<h3 id="title-2.2" tabIndex={-1} className="text-1xl font-semibold mb-3 mt-3">
 						Rules
 					</h3>
 					<p>
