@@ -119,7 +119,7 @@ const AriaLabel = () => {
   );
 };
 
-export const Demo3 = () => {
+export const UnderstandableExample = () => {
   const [showOnlyTotal, setShowOnlyTotal] = useState(false);
   const [showFullTotal, setShowFullTotal] = useState(false);
   const [showAriaLabel, setShowAriaLabel] = useState(false);

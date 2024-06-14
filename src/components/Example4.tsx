@@ -4,6 +4,7 @@
 import { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import styles from "./example4.module.css";
 import { AdvExample4 } from "@/resources/Img";
+import { UnderstandableExample } from "./Example3";
 
 const FloatingNoise = forwardRef<HTMLDivElement>(function FloatingNoise(
   props,
@@ -46,7 +47,7 @@ const FloatingNoise = forwardRef<HTMLDivElement>(function FloatingNoise(
   );
 });
 
-export const Demo4 = () => {
+export const Understandable = () => {
   const [showInfoModal, setShowInfoModal] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const floatingNoiseRef = useRef<HTMLDivElement>(null);
@@ -342,6 +343,10 @@ export const Demo4 = () => {
       </div>
 
       <FloatingNoise ref={floatingNoiseRef} />
+
+      <div>
+        <UnderstandableExample />
+      </div>
     </div>
   );
 };
