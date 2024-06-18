@@ -51,6 +51,7 @@ export const Understandable = () => {
   const [showInfoModal, setShowInfoModal] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const floatingNoiseRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
 
   const onScroll = useCallback((ev) => {
     const floatingNoiseRefInstance = floatingNoiseRef.current;
@@ -68,15 +69,26 @@ export const Understandable = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", onScroll, true);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
+    /////THIS_IS_A_WRONG_PRACTICES
+    // window.addEventListener("scroll", onScroll, true);
+    // return () => {
+    //   window.removeEventListener("scroll", onScroll);
+    // };
   }, [onScroll]);
+
+  useEffect(() => {
+    titleRef.current?.focus();
+  }, []);
 
   return (
     <div className={styles.container}>
+      <h2
+        ref={titleRef}
+        className="text-2xl font-semibold mb-3 mt-3"
+        tabIndex={-1}
+      >
+        TypeScript
+      </h2>
       <div className={styles.content}>
         <div>
           TypeScript ha nel suo nome la sua missione: fornire &quot;un
@@ -115,16 +127,18 @@ export const Understandable = () => {
       <button
         className={styles.actionShowExample}
         onClick={() => {
-          //setShowInfoModal(!showInfoModal);
-          if (dialogRef.current) {
-            dialogRef.current.showModal();
-            dialogRef.current.className = styles.modal;
-          }
+          setShowInfoModal(!showInfoModal);
+          ////THIS_IS_A_FIX
+          // if (dialogRef.current) {
+          //   dialogRef.current.showModal();
+          //   dialogRef.current.className = styles.modal;
+          // }
         }}
       >
         Scopri cosa puoi fare
       </button>
-      <dialog
+      {/* THIS_IS_A_FIX */}
+      {/* <dialog
         ref={dialogRef}
         onClose={() => {
           if (dialogRef.current) {
@@ -158,16 +172,15 @@ export const Understandable = () => {
         <footer>
           <button
             className={styles.actionModal}
-            onClick={() => {
-              // setShowInfoModal(false);
+            onClick={() => {              
               dialogRef.current?.close();
             }}
           >
             Chiudi
           </button>
         </footer>
-      </dialog>
-      {/* {showInfoModal && (
+      </dialog> */}
+      {showInfoModal && (
         <>
           <div className={styles.modalOverlay}></div>
           <div className={styles.modal}>
@@ -197,7 +210,7 @@ export const Understandable = () => {
             </footer>
           </div>
         </>
-      )} */}
+      )}
       <div style={{ marginTop: "50px" }}>
         <div>
           Quando abbiamo parlato di interfacce abbiamo detto che si tratta di un
@@ -288,7 +301,7 @@ export const Understandable = () => {
           linguaggi di programmazione orientata agli oggetti.
         </div>
         <div>
-          <h2>Definire i tipi</h2>
+          <h2 className="text-2xl font-semibold mb-3 mt-3">Definire i tipi</h2>
           Abbiamo visto come TypeScript preveda la possibilità di definire i
           tipi di dato dei parametri di una funzione. Abbiamo anche visto come
           dichiarare un'interfaccia che definisca il tipo di funzione, cioè un
@@ -296,11 +309,14 @@ export const Understandable = () => {
           quella del seguente esempio:
         </div>
         <div>
-          <h2>Parametri opzionali, predefiniti e rest</h2>A differenza di
-          JavaScript per cui i parametri di una funzione sono tutti opzionali,
-          in TypeScript siamo obbligati a passare il numero esatto di parametri
-          previsto dalla dichiarazione di funzione. Questo vuol dire che, mentre
-          in JavaScript possiamo scrivere il seguente codice:
+          <h2 className="text-2xl font-semibold mb-3 mt-3">
+            Parametri opzionali, predefiniti e rest
+          </h2>
+          A differenza di JavaScript per cui i parametri di una funzione sono
+          tutti opzionali, in TypeScript siamo obbligati a passare il numero
+          esatto di parametri previsto dalla dichiarazione di funzione. Questo
+          vuol dire che, mentre in JavaScript possiamo scrivere il seguente
+          codice:
         </div>
         <div>
           In TypeScript soltanto la chiamata con due argomenti darà un

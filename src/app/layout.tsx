@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="it">
       <body className={inter.className}>
         {/* <a className="skip-link" href="#content">
           Skip to main content
