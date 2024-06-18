@@ -16,7 +16,7 @@ export const Demo2 = () => {
 	}, []);
 
 	return (
-		<>
+		<div>
 		 <div id="sidebar"> {/*aside*/}
             <h2>Indice</h2>
             <ul>
@@ -42,6 +42,12 @@ export const Demo2 = () => {
 				>
 					WCAG
 				</h2>
+				<p>
+					Good accessibility or <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">a11y</a> is crucial to making sure all users can
+					access the content in your sites and applications. Making sure you
+					consider accessibility at the start of your process will ensure that
+					your final product is more polished and works for more people.
+				</p>
 				<p>
 					<Image
 						alt="Web Content Accessibility Guidelines"
@@ -157,7 +163,7 @@ export const Demo2 = () => {
 				</div>
 			</div>
 		</div>
-		</>
+		</div>
 	);
 };
 
